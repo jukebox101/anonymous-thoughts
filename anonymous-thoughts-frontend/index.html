@@ -9,23 +9,34 @@
     <title>Anonymous Thoughts</title>
 </head>
 <body>
-    <h1>Anonymous Thoughts</h1>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <form class="form-inline">
+                <input class="form-control mr-sm-2" type="text" id="myInput" onkeyup="dynamicSearch()" placeholder="Search">
+        </form>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>Anonymous Thoughts</h1>
+            <p>A place to share and view thoughts, ideas, and opinions under an anonymous alias...</p>
+        </div>
+    </div>
+    <div class= "container">
+
     <form id="create-post">
         <div class="form-group">
             <label for="content">Thought:</label>
             <textarea class="form-control" rows="5" id="content" placeholder="Write your anonymous thought here..."></textarea>
-        
         </div>
         <div class="form-group">
-            <label for="user">Alias:</label>
-            <input type="text" class="form-control" placeholder="Enter your alias here..." id="user">
+            <label for="alias">Alias:</label>
+            <input type="text" class="form-control" placeholder="Enter your alias here..." id="alias">
         </div>
         <button type="submit" class="btn btn-primary">Post Thought</button>
     </form>
-    <div id="post-list">
+    <br>
+    <div class="card" id="post-list">
         <!-- Put cards here -->
-        </div>
     </div>
-    
+    </div>
 </body>
 </html>
