@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="index.js" defer></script>
     <title>Anonymous Thoughts</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-light">
+        <a class="navbar-brand" href="#">
+                <img src="https://img.icons8.com/cute-clipart/128/000000/edit.png" alt="Logo" style="width:40px;">
+        </a>
         <form class="form-inline">
                 <input class="form-control mr-sm-2" type="text" id="myInput" onkeyup="dynamicSearch()" placeholder="Search">
         </form>
     </nav>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid" id="jumbo">
         <div class="container">
             <h1>Anonymous Thoughts</h1>
             <p>A place to share and view thoughts, ideas, and opinions under an anonymous alias...</p>
@@ -31,7 +41,7 @@
             <label for="alias">Alias:</label>
             <input type="text" class="form-control" placeholder="Enter your alias here..." id="alias">
         </div>
-        <button type="submit" class="btn btn-primary">Post Thought</button>
+        <button type="submit" class="btn" id="post-thought-btn">Post Thought</button>
     </form>
     <br>
     <div class="card" id="post-list">

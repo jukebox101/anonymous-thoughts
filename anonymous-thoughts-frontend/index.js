@@ -33,13 +33,12 @@ function renderOnePost(post){
     postCard.innerHTML = `
         <p class="card-text">${post.content}</p>
         <p class="card-text">- ${post.alias}</p>
-        <button type="button" class="btn btn-success" id="like-btn">${post.like} 👍</button>
-        <button type="button" class="btn btn-danger" id="dislike-btn">${post.dislike} 👎</button>
-        <br>
+        <button type="button" class="btn" id="like-btn">${post.like} 👍</button>
+        <button type="button" class="btn" id="dislike-btn">${post.dislike} 👎</button>
     `
     // const cardBreak = document.createElement("br")
     
-    postList.append(postCard)
+    postList.prepend(postCard)
     // postList.prepend(cardBreak)
     console.log(`${post.id} card created`)
     const likeButton = postCard.querySelector("#like-btn")

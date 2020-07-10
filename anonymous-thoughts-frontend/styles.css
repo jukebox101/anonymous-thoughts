@@ -1,22 +1,52 @@
+body { background: #f4976c !important; }
+
 #myInput {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    background-color: #2D4159;
-    background-image: url("https://img.icons8.com/metro/26/000000/search.png");
+    color: #fafafa;
+    background-color: #fbe8a6;
+    background-image: url("https://img.icons8.com/material-outlined/24/000000/search.png");
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+
   }
   
   #myInput:focus {
     width: 100%;
   }
 
-.navbar {
+#post-list {
+  background-color: #303c6c;
+}
+#post-card {
+  padding: 30px;
+  margin: 20px;
+  background-color: #fbe8a6;
+}
 
+.navbar {
+  background-color: #f4976c;
+}
+
+#like-btn {
+  color: #303c6c;
+  background-color: #d2fdff;
+}
+
+#dislike-btn {
+  color: #303c6c;
+  background-color: #d2fdff;
+}
+#post-thought-btn {
+  color: #303c6c;
+  background-color: #d2fdff;
+}
+
+#jumbo {
+  color: #fbe8a6;
+  background-color: #303c6c;
 }
