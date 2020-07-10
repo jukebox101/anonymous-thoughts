@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="node_modules/autolinker/dist/Autolinker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="index.js" defer></script>
     <title>Anonymous Thoughts</title>
 </head>
 <body>
-    <nav class="navbar navbar-light">
+    <div id="alert-div">
+
+    </div>
+    <nav class="navbar shadow navbar-light">
         <a class="navbar-brand" href="#">
                 <img src="https://img.icons8.com/cute-clipart/128/000000/edit.png" alt="Logo" style="width:40px;">
         </a>
         <form class="form-inline">
-                <input class="form-control mr-sm-2" type="text" id="myInput" onkeyup="dynamicSearch()" placeholder="Search">
+                <input class="form-control shadow mr-sm-2" type="text" id="myInput" onkeyup="dynamicSearch()" placeholder="Search">
         </form>
     </nav>
     <div class="jumbotron jumbotron-fluid" id="jumbo">
@@ -44,7 +42,7 @@
         <button type="submit" class="btn" id="post-thought-btn">Post Thought</button>
     </form>
     <br>
-    <div class="card" id="post-list">
+    <div class="card shadow p-3 mb-5 rounded" id="post-list">
         <!-- Put cards here -->
     </div>
     </div>

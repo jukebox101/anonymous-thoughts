@@ -1,5 +1,8 @@
+
+
 const postList = document.querySelector("#post-list")
 const postForm = document.querySelector("#create-post")
+const alertDiv = document.querySelector("#alert-div")
 
 postForm.addEventListener("submit", (event) => {
     event.preventDefault()
@@ -10,6 +13,7 @@ postForm.addEventListener("submit", (event) => {
         dislike: 0,
         alias: event.target.alias.value
     }
+    if (newPost["content"] !== "" && newPost["alias"] !== ""){
     console.log(newPost)
     fetch(`http://localhost:3000/posts`, {
     method: "POST",
@@ -24,6 +28,19 @@ postForm.addEventListener("submit", (event) => {
       renderOnePost(actualNewPost)
       postForm.reset()
     })
+    .catch((errors) => {
+      console.error('Error:', errors);
+    });
+  }
+  else {
+    console.log("Invalid Input")
+    alertDiv.innerHTML = `
+    <div class="alert alert-danger alert-dismissible fade show">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Invalid Input!</strong> All inputs fields must be filled.
+    </div>
+    `
+  }
 })
 function renderOnePost(post){
     
@@ -31,8 +48,8 @@ function renderOnePost(post){
     postCard.className = "card"
     postCard.setAttribute("id", "post-card")
     postCard.innerHTML = `
-        <p class="card-text">${post.content}</p>
-        <p class="card-text">- ${post.alias}</p>
+        <p class="card-text" id="content-body">${post.content}</p>
+        <p class="card-text" id="alias-name"> ${post.alias}</p>
         <button type="button" class="btn" id="like-btn">${post.like} 👍</button>
         <button type="button" class="btn" id="dislike-btn">${post.dislike} 👎</button>
     `
@@ -43,13 +60,11 @@ function renderOnePost(post){
     console.log(`${post.id} card created`)
     const likeButton = postCard.querySelector("#like-btn")
     const dislikeButton = postCard.querySelector("#dislike-btn")
-
-    
+    const contentBody = postCard.querySelector("#content-body")
+    contentBody.innerHTML = Autolinker.link(contentBody.innerHTML)
 
     likeButton.addEventListener("click", () => {
 
-        
-        
         console.log(post.like)
 
         fetch (`http://localhost:3000/posts/${post.id}/like`, {
@@ -60,8 +75,8 @@ function renderOnePost(post){
             likeButton.innerText = `${data.like} 👍`
             console.log('Success:', data);
           })
-          .catch((error) => {
-            console.error('Error:', error);
+          .catch((errors) => {
+            console.error('Error:', errors);
           });
     })
 
@@ -77,8 +92,8 @@ function renderOnePost(post){
             dislikeButton.innerText = `${data.dislike} 👎`
             console.log('Success:', data);
           })
-          .catch((error) => {
-            console.error('Error:', error);
+          .catch((errors) => {
+            console.error('Error:', errors);
           });
     })
 
