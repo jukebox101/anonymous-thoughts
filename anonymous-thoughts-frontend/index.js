@@ -1,5 +1,3 @@
-
-
 const postList = document.querySelector("#post-list")
 const postForm = document.querySelector("#create-post")
 const alertDiv = document.querySelector("#alert-div")
@@ -117,16 +115,13 @@ function dynamicSearch() {
     let input, filter, div, innerDiv, p, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
-    console.log(filter)
     div = document.getElementById("post-list");
-    console.log(div)
     innerDiv = div.getElementsByClassName("card");
-    console.log(innerDiv)
+
     for (i = 0; i < innerDiv.length; i++) {
         p = innerDiv[i].getElementsByClassName("card-text")[0];
-        console.log(p)
         txtValue = p.textContent || p.innerText;
-        console.log(txtValue)
+
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             innerDiv[i].style.display = "block";
         } else {
