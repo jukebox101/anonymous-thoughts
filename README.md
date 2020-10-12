@@ -1,2 +1,2 @@
 # anonymous-thoughts
-Mod3 project at Flatiron School
+Anonymous Thought is a web application where users can express their thoughts under an anonymous alias.
