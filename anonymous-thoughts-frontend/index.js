@@ -40,6 +40,7 @@ postForm.addEventListener("submit", (event) => {
     `
   }
 })
+
 function renderOnePost(post){
     
     const postCard = document.createElement("div")
@@ -112,13 +113,13 @@ fetch("http://localhost:3000/posts")
     })
 
 function dynamicSearch() {
-    let input, filter, div, innerDiv, p, i, txtValue;
+    let input, filter, div, innerDiv, p, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
     div = document.getElementById("post-list");
     innerDiv = div.getElementsByClassName("card");
 
-    for (i = 0; i < innerDiv.length; i++) {
+    for (let i = 0; i < innerDiv.length; i++) {
         p = innerDiv[i].getElementsByClassName("card-text")[0];
         txtValue = p.textContent || p.innerText;
 
@@ -128,5 +129,4 @@ function dynamicSearch() {
             innerDiv[i].style.display = "none";
         }
     }
-
 }
